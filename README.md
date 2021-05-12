@@ -1,4 +1,4 @@
-<img src="src/test/resources/favicon.ico" align="right" />
+<img src="src/test/resources/logo.jpg" width="150" align="right" />
 
 # Automation Practice Framework ![sparta_badge][sparta_badge]
 > POM Testing framework for [**Automation Pracice**](http://automationpractice.com/)
