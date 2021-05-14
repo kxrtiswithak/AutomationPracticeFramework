@@ -8,18 +8,21 @@ public interface ShoppingCartPage{
 
     void reduceQuantity();
 
-    void enterQuantityNumber();
+    void enterQuantityNumber(String quantityNumber);
 
     // reset cart to one item, deletes everything in cart then calls HomePage().setUp()
     void resetCart();
 
     void deleteItem();
 
-    HomePage goBackToHomePage();
+    HomePage continueShopping();
 
     // checks if signed in, return appropriate page
     Page proceedToCheckout();
 
-    // differentiate between image and title (overloading, params)
-    ItemPage goToItemPage();
+    ItemPage goToItemPageViaImage();
+
+    ItemPage goToItemPageViaTitle();
+
+    ItemPage goToItemPageViaDescription();
 }
