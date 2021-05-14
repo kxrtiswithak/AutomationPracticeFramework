@@ -13,6 +13,7 @@ public class ShippingPageImpl extends Page implements ShippingPage {
     private By termsOfServiceCheckboxId = By.id("cgv");
     private By termsOfServiceLink = By.linkText("(Read the Terms of Service)");
     private By proceedToCheckoutButton = By.linkText("Proceed to checkout");
+    private By continueShoppingButton = By.linkText("Continue shopping");
 
     public ShippingPageImpl(WebDriver driver) {
         this.driver = driver;
@@ -41,6 +42,7 @@ public class ShippingPageImpl extends Page implements ShippingPage {
 
     @Override
     public AddressPage continueShoppingButton() {
-        return null;
+        driver.findElement(continueShoppingButton).click();
+        return new AddressPageImpl(driver);
     }
 }
