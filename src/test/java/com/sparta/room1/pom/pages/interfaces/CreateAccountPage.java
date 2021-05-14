@@ -4,4 +4,5 @@ import com.sparta.room1.pom.pages.Page;
 
 public interface CreateAccountPage {
 
+    SignInPage goBackToSignInPage();
 }
