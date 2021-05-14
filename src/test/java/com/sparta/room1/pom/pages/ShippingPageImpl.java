@@ -14,6 +14,9 @@ public class ShippingPageImpl extends Page implements ShippingPage {
     private By termsOfServiceLink = By.linkText("(Read the Terms of Service)");
     private By proceedToCheckoutButton = By.linkText("Proceed to checkout");
     private By continueShoppingButton = By.linkText("Continue shopping");
+    private By termsOfServiceErrorBox = By.className("fancybox-error");
+    private By termsOfService = By.className("fancybox-skin");
+    private WebElement termsOfServiceCheckbox;
 
     public ShippingPageImpl(WebDriver driver) {
         this.driver = driver;
@@ -21,18 +24,24 @@ public class ShippingPageImpl extends Page implements ShippingPage {
 
     @Override
     public boolean doesTermsOfServiceShow() {
-        String termsOfServiceText = driver.findElement(termsOfServiceLink).getText();
-        return termsOfServiceText.contains("http://automationpractice.com/index.php?id_cms=3&controller=cms&content_only=1");
+        driver.findElement(termsOfServiceLink).click();
+        return driver.findElement(termsOfService).isDisplayed();
     }
 
     @Override
     public boolean doesNotProceedToCheckoutWhenTosUnticked() {
-        return false;
+        String currentUrl = getUrl();
+        termsOfServiceCheckbox = driver.findElement(termsOfServiceCheckboxId);
+        if(termsOfServiceCheckbox.isSelected()) {
+            termsOfServiceCheckbox.click();
+        }
+        driver.findElement(proceedToCheckoutButton).click();
+        return getUrl().equals(currentUrl) && driver.findElement(termsOfServiceErrorBox).isDisplayed();
     }
 
     @Override
     public PaymentPage proceedToCheckout() {
-        WebElement termsOfServiceCheckbox = driver.findElement(termsOfServiceCheckboxId);
+        termsOfServiceCheckbox = driver.findElement(termsOfServiceCheckboxId);
         if(!termsOfServiceCheckbox.isSelected()) {
             termsOfServiceCheckbox.click();
         }
