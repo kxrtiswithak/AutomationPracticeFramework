@@ -1,6 +1,8 @@
 package com.sparta.room1.pom.pages.interfaces;
 
-public interface NewAddressPage extends Page {
+import com.sparta.room1.pom.pages.Page;
+
+public interface NewAddressPage {
 
     AddressPage goBackToAddressPage();
 }

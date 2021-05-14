@@ -1,9 +1,11 @@
 package com.sparta.room1.pom.pages.interfaces;
 
-public interface HomePage extends Page {
+import com.sparta.room1.pom.pages.Page;
+
+public interface HomePage {
 
     ShoppingCartPage goToShoppingCartPage();
 
     // add to cart
-    void setUp();
+    void addToCart();
 }
