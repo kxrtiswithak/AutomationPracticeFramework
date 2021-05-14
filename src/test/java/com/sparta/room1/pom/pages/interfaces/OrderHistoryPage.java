@@ -1,4 +1,6 @@
 package com.sparta.room1.pom.pages.interfaces;
 
-public interface OrderHistoryPage extends Page {
+import com.sparta.room1.pom.pages.Page;
+
+public interface OrderHistoryPage  {
 }
