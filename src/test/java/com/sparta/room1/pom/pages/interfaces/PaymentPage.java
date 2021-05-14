@@ -1,6 +1,8 @@
 package com.sparta.room1.pom.pages.interfaces;
 
-public interface PaymentPage extends Page {
+import com.sparta.room1.pom.pages.Page;
+
+public interface PaymentPage  {
 
     // differentiate between image and title (overloading, params)
     ItemPage goToItemPage();

@@ -1,17 +1,19 @@
 package com.sparta.room1.pom.pages.interfaces;
 
-public interface ShoppingCartPage extends Page {
+import com.sparta.room1.pom.pages.Page;
 
-    boolean increaseQuantity();
+public interface ShoppingCartPage{
 
-    boolean reduceQuantity();
+    void increaseQuantity();
 
-    boolean enterQuantityNumber();
+    void reduceQuantity();
+
+    void enterQuantityNumber();
 
     // reset cart to one item, deletes everything in cart then calls HomePage().setUp()
-    boolean resetCart();
+    void resetCart();
 
-    boolean deleteItem();
+    void deleteItem();
 
     HomePage goBackToHomePage();
 
