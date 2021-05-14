@@ -1,6 +1,6 @@
 package com.sparta.room1.pom.pages;
 
-import com.sparta.room1.pom.pages.interfaces.AccountPage;
+import com.sparta.room1.pom.pages.interfaces.CreateAccountPage;
 import com.sparta.room1.pom.pages.interfaces.AddressPage;
 import com.sparta.room1.pom.pages.interfaces.ForgotPasswordPage;
 import com.sparta.room1.pom.pages.interfaces.SignInPage;
@@ -16,7 +16,7 @@ public class SignInPageImpl extends Page implements SignInPage {
 
 
     @Override
-    public AccountPage createAccount(String email) {
+    public CreateAccountPage createAccount(String email) {
         return null;
     }
 
