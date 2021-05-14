@@ -7,13 +7,13 @@ public interface AddressPage {
     // Address addNewAddress();?
 
     // does delivery address change when selected
-    void selectExistingDeliveryAddress();
+    void selectExistingDeliveryAddress(String addressName);
 
     // copies delivery address when checkbox ticked, button appears when unticked
     boolean isBillingAddressDeliveryAddressWhenTicked();
 
     // should display address when 2 addresses are on account
-    void selectExistingBillingAddress();
+    void selectExistingBillingAddress(String addressName);
 
     // address_add_submit class
     NewAddressPage addNewAddressButton();
